@@ -8,5 +8,8 @@ typedef struct
 
 void add_to_heap(int number, MinHeap *heap)
 {
-	heap->elements[0] = number;
+	int index_to_put = heap->quantity;
+	heap->elements[index_to_put] = number;
+
+    heap->quantity++;
 }
