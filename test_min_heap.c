@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "min_heap.c"
+#include "min_heap.h"
 #include "Libraries/unit_testing.c"
 
 bool test_adding_one_number_to_min_heap()
