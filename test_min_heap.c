@@ -67,6 +67,20 @@ bool test_adding_numbers_in_descending_order_to_min_heap(out MinHeap *actual_hea
 		&& heap.elements[2] == 10;
 }
 
+bool test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings(out MinHeap *actual_heap)
+{
+	MinHeap heap = { .quantity = 0 };
+	add_to_heap(14, &heap);
+	add_to_heap(11, &heap);
+	add_to_heap(10, &heap);
+
+	*actual_heap = heap;
+
+	return heap.elements[0] == 10
+		&& heap.elements[1] == 14
+		&& heap.elements[2] == 11;
+}
+
 void run_all_tests()
 {
 	run_test(test_adding_one_number_to_min_heap, "adding `7` should return `{ 7 }`");
@@ -75,6 +89,7 @@ void run_all_tests()
 
 	run_test(test_adding_adjacent_numbers_in_descending_order_to_min_heap, "adding `14` then `10` should return `{ 10, 14 }`");
 	run_test(test_adding_numbers_in_descending_order_to_min_heap, "adding `14` then `1`, `10` should return `{ 1, 14, 10 }`");
+	run_test(test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings, "adding `14` then `11`, `10` should return `{ 10, 14, 11 }`");
 }
 
 int main()

@@ -32,15 +32,11 @@ void add_to_heap(int number, MinHeap *heap)
 	heap->quantity++;
 
 	int parent = heap->elements[0];
-	int left_child = heap->elements[1];
 
-	if (parent > left_child && heap->quantity >= 2)
-		swap_numbers_in_heap(heap, 0, 1);
-
-	if (heap->quantity > 2)
+	if (number < parent)
 	{
-		int right_child = heap->elements[2];
-		if (parent > left_child && heap->quantity >= 2)
-			swap_numbers_in_heap(heap, 0, 2);
+		int aux = number;
+		heap->elements[index_to_put] = parent;
+		heap->elements[0] = aux;
 	}
 }
