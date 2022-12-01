@@ -81,6 +81,26 @@ bool test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings(ou
 		&& heap.elements[2] == 11;
 }
 
+bool test_adding_many_numbers_to_min_heap_with_multiple_reorderings(out MinHeap *actual_heap)
+{
+	MinHeap heap = { .quantity = 0 };
+	add_to_heap(17, &heap);
+	add_to_heap(10, &heap);
+	add_to_heap(8, &heap);
+	add_to_heap(9, &heap);
+	add_to_heap(2, &heap);
+	add_to_heap(1, &heap);
+
+	*actual_heap = heap;
+
+	return heap.elements[0] == 1
+		&& heap.elements[1] == 8
+		&& heap.elements[2] == 2
+		&& heap.elements[3] == 17
+		&& heap.elements[4] == 9
+		&& heap.elements[5] == 10;
+}
+
 void run_all_tests()
 {
 	run_test(test_adding_one_number_to_min_heap, "adding `7` should return `{ 7 }`");
@@ -90,6 +110,7 @@ void run_all_tests()
 	run_test(test_adding_adjacent_numbers_in_descending_order_to_min_heap, "adding `14` then `10` should return `{ 10, 14 }`");
 	run_test(test_adding_numbers_in_descending_order_to_min_heap, "adding `14` then `1`, `10` should return `{ 1, 14, 10 }`");
 	run_test(test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings, "adding `14` then `11`, `10` should return `{ 10, 14, 11 }`");
+	run_test(test_adding_many_numbers_to_min_heap_with_multiple_reorderings, "adding `17` then `10`, `8`, `9`, `2`, `1` should return `{ 1, 8, 2, 17, 9, 10 }`");
 }
 
 int main()
