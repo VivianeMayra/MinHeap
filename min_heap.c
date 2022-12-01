@@ -12,9 +12,9 @@ void _print_minheap(MinHeap *heap)
 	int last_element = heap->elements[last_index];
 
 	if (heap->quantity > 0)
-		printf("%d }\n", last_element);
-	else
-		printf(" }\n");
+		printf("%d", last_element);
+
+	printf(" }\n");
 }
 
 void swap_numbers_in_heap(MinHeap *heap, int first_index, int second_index)
