@@ -9,7 +9,7 @@ bool test_adding_one_number_to_min_heap(out MinHeap *actual_heap)
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 7;
+	return heap.elements[0].value == 7;
 }
 
 bool test_adding_two_numbers_to_min_heap(out MinHeap *actual_heap)
@@ -20,7 +20,7 @@ bool test_adding_two_numbers_to_min_heap(out MinHeap *actual_heap)
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 7 && heap.elements[1] == 8;
+	return heap.elements[0].value == 7 && heap.elements[1].value == 8;
 }
 
 bool test_adding_multiple_numbers_to_min_heap(out MinHeap *actual_heap)
@@ -34,11 +34,11 @@ bool test_adding_multiple_numbers_to_min_heap(out MinHeap *actual_heap)
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 7
-		&& heap.elements[1] == 8
-		&& heap.elements[2] == 9
-		&& heap.elements[3] == 10
-		&& heap.elements[4] == 11;
+	return heap.elements[0].value == 7
+		&& heap.elements[1].value == 8
+		&& heap.elements[2].value == 9
+		&& heap.elements[3].value == 10
+		&& heap.elements[4].value == 11;
 }
 
 bool test_adding_adjacent_numbers_in_descending_order_to_min_heap(out MinHeap *actual_heap)
@@ -49,8 +49,8 @@ bool test_adding_adjacent_numbers_in_descending_order_to_min_heap(out MinHeap *a
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 10
-		&& heap.elements[1] == 14;
+	return heap.elements[0].value == 10
+		&& heap.elements[1].value == 14;
 }
 
 bool test_adding_numbers_in_descending_order_to_min_heap(out MinHeap *actual_heap)
@@ -62,9 +62,9 @@ bool test_adding_numbers_in_descending_order_to_min_heap(out MinHeap *actual_hea
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 1
-		&& heap.elements[1] == 14
-		&& heap.elements[2] == 10;
+	return heap.elements[0].value == 1
+		&& heap.elements[1].value == 14
+		&& heap.elements[2].value == 10;
 }
 
 bool test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings(out MinHeap *actual_heap)
@@ -76,9 +76,9 @@ bool test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings(ou
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 10
-		&& heap.elements[1] == 14
-		&& heap.elements[2] == 11;
+	return heap.elements[0].value == 10
+		&& heap.elements[1].value == 14
+		&& heap.elements[2].value == 11;
 }
 
 bool test_adding_many_numbers_to_min_heap_with_multiple_reorderings(out MinHeap *actual_heap)
@@ -93,12 +93,12 @@ bool test_adding_many_numbers_to_min_heap_with_multiple_reorderings(out MinHeap 
 
 	*actual_heap = heap;
 
-	return heap.elements[0] == 1
-		&& heap.elements[1] == 8
-		&& heap.elements[2] == 2
-		&& heap.elements[3] == 17
-		&& heap.elements[4] == 9
-		&& heap.elements[5] == 10;
+	return heap.elements[0].value == 1
+		&& heap.elements[1].value == 8
+		&& heap.elements[2].value == 2
+		&& heap.elements[3].value == 17
+		&& heap.elements[4].value == 9
+		&& heap.elements[5].value == 10;
 }
 
 void run_all_tests()

@@ -5,7 +5,13 @@
 
 typedef struct
 {
-	int elements[CAPACITY];
+	int value;
+	int level;
+} HeapElement;
+
+typedef struct
+{
+	HeapElement elements[CAPACITY];
 	int quantity;
 } MinHeap;
 
