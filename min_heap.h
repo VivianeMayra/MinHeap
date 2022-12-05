@@ -18,5 +18,6 @@ typedef struct
 void _print_minheap(MinHeap *heap);
 void swap_numbers_in_heap(MinHeap *heap, int first_index, int second_index);
 void add_to_heap(int number, MinHeap *heap);
+void push_to_heap(HeapElement element, MinHeap *heap);
 
 #endif // MIN_HEAP_H
