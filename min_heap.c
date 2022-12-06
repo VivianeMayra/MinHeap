@@ -60,5 +60,6 @@ void add_to_heap(int number, MinHeap *heap)
 
 void list_heap_in_ascending_order(MinHeap heap, out int list[])
 {
-	list[0] = heap.elements[0];
+	for (int i = 0; i < heap.quantity; i++)
+		list[i] = heap.elements[i];
 }
