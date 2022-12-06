@@ -101,6 +101,19 @@ bool test_adding_many_numbers_to_min_heap_with_multiple_reorderings(out MinHeap 
 		&& heap.elements[5] == 10;
 }
 
+bool test_listing_heap_with_one_element()
+{
+	MinHeap heap;
+
+	heap.elements[0] = 10;
+	heap.quantity = 1;
+
+	int list[1];
+	list_heap_in_ascending_order(heap, out list);
+
+	return list[0] == 10;
+}
+
 void run_all_tests()
 {
 	run_test(test_adding_one_number_to_min_heap, "adding `7` should return `{ 7 }`");
@@ -111,6 +124,8 @@ void run_all_tests()
 	run_test(test_adding_numbers_in_descending_order_to_min_heap, "adding `14` then `1`, `10` should return `{ 1, 14, 10 }`");
 	run_test(test_adding_numbers_in_descending_order_to_min_heap_with_two_reorderings, "adding `14` then `11`, `10` should return `{ 10, 14, 11 }`");
 	run_test(test_adding_many_numbers_to_min_heap_with_multiple_reorderings, "adding `17` then `10`, `8`, `9`, `2`, `1` should return `{ 1, 8, 2, 17, 9, 10 }`");
+
+	run_test(test_listing_heap_with_one_element, "listing the heap `{ 10 }` should return the vector `{ 10 }`");
 }
 
 int main()

@@ -3,13 +3,16 @@
 
 #define HEAP_CAPACITY 200
 
+#define out
+
 typedef struct
 {
 	int elements[HEAP_CAPACITY];
 	int quantity;
 } MinHeap;
 
-void _print_minheap(MinHeap *heap);
-void add_to_heap(int number, MinHeap *heap);
+void _print_minheap(MinHeap *);
+void add_to_heap(int, MinHeap *);
+void list_heap_in_ascending_order(MinHeap, out int[]);
 
 #endif // MIN_HEAP_H
